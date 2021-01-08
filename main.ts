@@ -103,10 +103,8 @@ function GetTimeString() : string {
 
 basic.forever(function () {
 
-    let milliSecs = control.millis()
-
-    
-
+    // number of seconds since last update
+    let seconds = Math.floor((control.millis() - timeOffset) / 1000)
 
     sevenSegment.writeString(GetTimeString())
     basic.pause(1000)
